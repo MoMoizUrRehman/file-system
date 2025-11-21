@@ -487,24 +487,84 @@ marking those blocks as 'reserved' in my free space bitmap."
 Submit a ZIP file named `<figure_out>.zip` with this structure (hint: use PHASE-1):
 
 ```
-studentid_phase1.zip/
-├── source/
-│   ├── server/              # Your socket server code
-│   ├── core/                 # File system implementation
-│   ├── data_structures/     # Your data structure implementations
-│   ├── include/
-│   │   └── ofs_types.h      # MUST include standard types header
-│   └── ui/                  # Your UI source code
-├── compiled/
-│   ├── sample.omni          # Sample .omni file
-│   ├── default.uconf        # Configuration file
-├── documentation/
-│   ├── design_choices.md
-│   ├── file_io_strategy.md
-│   ├── user_guide.md
-│   └── testing_report.md
-└── README.md                # Quick start guide
-```
+file-verse-main/
+├── .vscode/
+├── build/
+├── file-verse/
+│   ├── __pycache__/
+│   ├── bin/
+│   │   └── ofs_test
+│   ├── build/
+│   │   ├── core/
+│   │   ├── data_structures/
+│   │   └── test/
+│   ├── compiled/
+│   │   ├── default.uconf
+│   └── source/
+│       ├── client/
+│       │   ├── client_api.cpp
+│       │   ├── client_api.hpp
+│       │   └── client_manager.cpp
+│       ├── core/
+│       │   ├── ofs_core.cpp
+│       │   ├── ofs_core.hpp
+│       │   └── ofs_core.o
+│       ├── data_structures/
+│       │   ├── directory_tree.cpp
+│       │   ├── directory_tree.hpp
+│       │   ├── directory_tree.o
+│       │   ├── free_block_manager.cpp
+│       │   ├── free_block_manager.hpp
+│       │   ├── free_block_manager.o
+│       │   ├── user_manager.o
+│       ├── include/
+│       │   └── security/
+│       │       ├── auth_manager.hpp
+│       │       ├── session_manager.hpp
+│       │       └── odf_types.hpp
+│       ├── security/
+│       │   ├── authentication_manager.cpp
+│       │   ├── authentication_manager.hpp
+│       │   ├── encryption_manager.cpp
+│       │   ├── encryption_manager.hpp
+│       │   ├── session_manager.cpp
+│       │   └── session_manager.hpp
+│       └── server/
+│           ├── client_queue.cpp
+│           ├── client_queue.hpp
+│           ├── server_manager.cpp
+│           ├── server_manager.hpp
+│           ├── server.cpp
+│           ├── server.o
+│           ├── web_bridge.cpp
+│           ├── web_bridge.hpp
+│           └── web_bridge.o
+│       └── test/
+│           ├── test_main.cpp
+│           ├── test_main.o
+│           └── test_manager.cpp
+│       └── ui/gui/
+│           ├── app.js
+│           ├── index.html
+│           ├── mock_server.js
+│           ├── simple_test.html
+│           ├── styles.css
+│           └── test_clients.js
+│       └── utils/
+│           ├── hash_utils.cpp
+│           └── hash_utils.hpp
+│       ├── build.sh
+│       ├── cpp_wrapper.cpp
+│       ├── cpp_wrapper.h
+│       ├── file_system_design.md
+│       ├── filesystem.omni
+│       ├── fileverse_cpp_bridge.py
+│       ├── fileverse_server.py
+│       ├── fileverse_ui.py
+│       └── fix_test_main.sh
+├── Makefile
+└── README.md
+
 
 ### Step 1: Design Your Data Structures FIRST
 Before writing any code, answer these questions on paper:
